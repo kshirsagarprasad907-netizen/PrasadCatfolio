@@ -2,13 +2,10 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   background-color: #0f0f0f;
-
   animation: overlayFadeOut 1s ease-in-out forwards;
   animation-delay: 4s;
 }
@@ -25,10 +22,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   gap: 1.5rem;
   padding: 1rem;
-
   text-align: center;
 }
 
@@ -43,7 +38,6 @@
 .paw {
   font-size: clamp(1.4rem, 3vw, 2.5rem);
   color: #b46f39;
-
   animation: pawGlow 2s ease-in-out infinite;
 }
 
