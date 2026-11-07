@@ -4,6 +4,10 @@ import "../styles/home.css";
 // Replace later
 import catImage from "../assets/images/aboutCat.gif";
 import myImage from "../assets/images/ProfilePic.jpg";
+import compProject from "../assets/images/compProjectCat.jpg";
+import smallProject from "../assets/images/smallProjectCat.jpeg";
+import archiveProject from "../assets/images/archProjectCat.jpg";
+
 
 export default function Home() {
   const [revived, setRevived] = useState(false);
@@ -39,7 +43,9 @@ export default function Home() {
 
       <section className="hero">
         <div className="heroLeft">
-          <div className="callout">Definitely not Prasad.</div>
+          <div className="callout" onClick={() => setRevived(!revived)}>
+            {revived ? "Hey it's Me!" : "Definitely not Prasad."}
+          </div>
 
           <div className="catFrame">
             <img src={revived ? myImage : catImage} alt="Profile" />
@@ -77,28 +83,22 @@ export default function Home() {
 
         <div className="projectContainer">
           <div className="projectCircle large">
-            <div className="circleImage"></div>
-
+            <img src={compProject} alt="Project" className="circleImage" />
             <h3>Comprehensive Projects</h3>
-
             <p>
               Bigger projects with multiple systems and deeper architecture.
             </p>
           </div>
 
           <div className="projectCircle medium">
-            <div className="circleImage"></div>
-
+            <img src={smallProject} alt="Project" className="circleImage" />
             <h3>Small Projects</h3>
-
             <p>Quick experiments and fun ideas.</p>
           </div>
 
           <div className="projectCircle small">
-            <div className="circleImage"></div>
-
+            <img src={archiveProject} alt="Project" className="circleImage" />
             <h3>Archive</h3>
-
             <p>Previous work and old experiments.</p>
           </div>
         </div>
