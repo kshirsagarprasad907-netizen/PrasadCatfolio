@@ -44,7 +44,7 @@ export default function Home() {
       <section className="hero">
         <div className="heroLeft">
           <div className="callout" onClick={() => setRevived(!revived)}>
-            {revived ? "Hey it's Me!" : "Definitely not Prasad."}
+            {revived ? "Hey you found me! Do not let that cat in here again!" : "Definitely not Prasad."}
           </div>
 
           <div className="catFrame">

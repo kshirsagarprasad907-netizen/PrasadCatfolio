@@ -6,8 +6,6 @@
   justify-content: center;
   align-items: center;
   background-color: #0f0f0f;
-  animation: overlayFadeOut 1s ease-in-out forwards;
-  animation-delay: 4s;
 }
 
 .introSubtitle {
@@ -16,6 +14,27 @@
   font-family: "Inter", sans-serif;
   font-size: clamp(0.5rem, 2vw, 0.9rem);
   color: #ffffff;
+}
+
+.enter-Btn {
+  position: absolute;
+  bottom: 12rem;
+}
+
+.introBtn {
+  margin-top: 2rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 1.6rem;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.introBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(180,111,57,.35);
 }
 
 .intro-content {

@@ -10,6 +10,7 @@
 
 body {
   margin: 0;
+  font-family: "Inter", sans-serif;
 }
 
 .home {
@@ -193,71 +194,133 @@ body {
   margin-bottom: 6rem;
 }
 
+/* Main Layout */
+
 .projectContainer {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 4rem;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 6rem);
+
+  flex-wrap: nowrap;
 }
+
+/* Shared Circle */
 
 .projectCircle {
   position: relative;
-  border-radius: 50%;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
   text-align: center;
+
   border: 1px solid rgba(180,111,57,.25);
-  transition: .4s ease;
+
   background:
     radial-gradient(
       circle at center,
-      rgba(180,111,57,.03),
-      transparent
+      rgba(180,111,57,.06),
+      transparent 75%
     );
+
+  transition: .4s ease;
+  overflow: hidden;
 }
 
 .projectCircle:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
   box-shadow:
     0 0 40px rgba(180,111,57,.15);
 }
 
+/* HERO PROJECT */
+
 .large {
-  width: 340px;
-  height: 340px;
+  width: min(40vw, 420px);
+  aspect-ratio: 1;
+  padding: 2rem;
 }
+
+/* SMALL PROJECTS */
 
 .medium {
-  width: 240px;
-  height: 240px;
-  margin-top: 120px;
+  width: min(26vw, 280px);
+  aspect-ratio: 1;
+  padding: 1.5rem;
 }
+
+/* ARCHIVE */
 
 .small {
-  width: 180px;
-  height: 180px;
-  margin-bottom: 120px;
+  width: min(18vw, 180px);
+  aspect-ratio: 1;
+  padding: 1rem;
 }
 
+/* Images */
+
 .circleImage {
-  width: 180px;
-  height: 180px;
+  object-fit: contain;
   border-radius: 50%;
-  background: #242424;
   margin-bottom: 1rem;
 }
 
+/* Each bubble gets proportional image */
+
+.large .circleImage {
+  width: 42%;
+  aspect-ratio: 1;
+}
+
+.medium .circleImage {
+  width: 34%;
+  aspect-ratio: 1;
+}
+
+.small .circleImage {
+  width: 30%;
+  aspect-ratio: 1;
+}
+
+/* Typography */
+
 .projectCircle h3 {
   font-family: "Poppins";
-  margin-bottom: .7rem;
+  margin-bottom: .5rem;
+}
+
+.large h3 {
+  font-size: 1.5rem;
+}
+
+.medium h3 {
+  font-size: 1rem;
+}
+
+.small h3 {
+  font-size: .9rem;
 }
 
 .projectCircle p {
   color: var(--muted);
-  max-width: 70%;
-  font-size: .85rem;
+  width: 75%;
+  line-height: 1.5;
+}
+
+.large p {
+  font-size: .95rem;
+}
+
+.medium p {
+  font-size: .8rem;
+}
+
+.small p {
+  font-size: .7rem;
 }
 
 /* =============================
