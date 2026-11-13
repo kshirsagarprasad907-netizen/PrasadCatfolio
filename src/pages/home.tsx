@@ -1,13 +1,15 @@
 import { useState } from "react";
 import "../styles/home.css";
+import { motion } from "framer-motion";
+import { Cog } from "lucide-react";
 
-// Replace later
+// image imports
 import catImage from "../assets/images/aboutCat.gif";
 import myImage from "../assets/images/ProfilePic.jpg";
 import compProject from "../assets/images/compProjectCat.jpg";
 import smallProject from "../assets/images/smallProjectCat.jpeg";
 import archiveProject from "../assets/images/archProjectCat.jpg";
-
+import inProgressCat from "../assets/images/inProgressCat.gif";
 
 export default function Home() {
   const [revived, setRevived] = useState(false);
@@ -41,10 +43,36 @@ export default function Home() {
         </div>
       </nav>
 
+      <section className="inProgressIndicator">
+        <img src={inProgressCat} alt="In Progress" className="inProgressGif" />
+
+        <div className="inProgressText">
+          <motion.div
+          className="gearWrapper"
+          animate={{ rotate: 360 }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        >
+          <Cog size={48} />
+        </motion.div>
+          <h2>Portfolio In Progress</h2>
+          <p>
+          The Portfolio is currently in progress, you can still check my
+          progress though. More content and projects will be added soon!
+        </p>
+
+        </div>
+      </section>
+
       <section className="hero">
         <div className="heroLeft">
           <div className="callout" onClick={() => setRevived(!revived)}>
-            {revived ? "Hey you found me! Do not let that cat in here again!" : "Definitely not Prasad."}
+            {revived
+              ? "Hey you found me! Do not let that cat in here again!"
+              : "Definitely not Prasad."}
           </div>
 
           <div className="catFrame">
@@ -82,24 +110,36 @@ export default function Home() {
         <h2>My Projects</h2>
 
         <div className="projectContainer">
-          <div className="projectCircle large">
-            <img src={compProject} alt="Project" className="circleImage" />
-            <h3>Comprehensive Projects</h3>
-            <p>
-              Bigger projects with multiple systems and deeper architecture.
-            </p>
+          <div className="comprehensiveProject">
+            <div className="projectCircle large">
+              <img src={compProject} alt="Project" className="circleImage" />
+            </div>
+            <div className="projectDescription">
+              <h3>Comprehensive Projects</h3>
+              <p>
+                Bigger projects with multiple systems and deeper architecture.
+              </p>
+            </div>
           </div>
 
-          <div className="projectCircle medium">
-            <img src={smallProject} alt="Project" className="circleImage" />
-            <h3>Small Projects</h3>
-            <p>Quick experiments and fun ideas.</p>
+          <div className="smallProject">
+            <div className="projectCircle medium">
+              <img src={smallProject} alt="Project" className="circleImage" />
+            </div>
+            <div className="projectDescription">
+              <h3>Small Projects</h3>
+              <p>Quick experiments and fun ideas.</p>
+            </div>
           </div>
 
-          <div className="projectCircle small">
-            <img src={archiveProject} alt="Project" className="circleImage" />
-            <h3>Archive</h3>
-            <p>Previous work and old experiments.</p>
+          <div className="archiveProject">
+            <div className="projectCircle small">
+              <img src={archiveProject} alt="Project" className="circleImage" />
+            </div>
+            <div className="projectDescription">
+              <h3>Archive</h3>
+              <p>Previous work and old experiments.</p>
+            </div>
           </div>
         </div>
       </section>
