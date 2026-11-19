@@ -1,0 +1,76 @@
+:root {
+  --bg: #0f0f0f;
+  --card: #151515;
+  --text: #ffffff;
+  --muted: #9b9b9b;
+  --accent: #b46f39;
+  --border: #242424;
+
+  /* Typography */
+  --h1: clamp(2.5rem, 5vw, 3rem);
+  --h2: clamp(2rem, 4vw, 3rem);
+  --h3: 1rem;
+  --h4: .95rem;
+
+  --body: .95rem;
+  --small: .8rem;
+
+  margin: 0;
+}
+
+/* =============================
+   NAVBAR
+============================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.25rem 6rem;
+
+  backdrop-filter: blur(12px);
+  background: rgba(15, 15, 15, .85);
+
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navLinks a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: .85rem;
+  transition: .3s;
+}
+
+.navLinks a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+
+  .navbar {
+    position: static;
+    padding: 1rem 1.5rem;
+  }
+
+  .navLinks {
+    gap: 1rem;
+  }
+  
+}

@@ -2,6 +2,10 @@ import { useState } from "react";
 import "../styles/home.css";
 import { motion } from "framer-motion";
 import { Cog } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
+//component imports
+import Navbar from "../components/navbar";
 
 // image imports
 import catImage from "../assets/images/aboutCat.gif";
@@ -11,8 +15,12 @@ import smallProject from "../assets/images/smallProjectCat.jpeg";
 import archiveProject from "../assets/images/archProjectCat.jpg";
 import inProgressCat from "../assets/images/inProgressCat.gif";
 
+//constants
+
 export default function Home() {
   const [revived, setRevived] = useState(false);
+
+  const navigate = useNavigate();
 
   const techStack = [
     "Java",
@@ -31,39 +39,28 @@ export default function Home() {
 
   return (
     <div className="home">
-      <nav className="navbar">
-        <div className="logo">🐾 CatFolio</div>
-
-        <div className="navLinks">
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-          <a href="/resume.pdf" target="_blank">
-            Resume
-          </a>
-        </div>
-      </nav>
+      <Navbar />
 
       <section className="inProgressIndicator">
         <img src={inProgressCat} alt="In Progress" className="inProgressGif" />
 
         <div className="inProgressText">
           <motion.div
-          className="gearWrapper"
-          animate={{ rotate: 360 }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        >
-          <Cog size={48} />
-        </motion.div>
+            className="gearWrapper"
+            animate={{ rotate: 360 }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
+            <Cog size={48} />
+          </motion.div>
           <h2>Portfolio In Progress</h2>
           <p>
-          The Portfolio is currently in progress, you can still check my
-          progress though. More content and projects will be added soon!
-        </p>
-
+            The Portfolio is currently in progress, you can still check my
+            progress though. More content and projects will be added soon!
+          </p>
         </div>
       </section>
 
@@ -109,8 +106,18 @@ export default function Home() {
       <section className="projectsSection" id="projects">
         <h2>My Projects</h2>
 
+      <div className="projectTypeList">
         <div className="projectContainer">
-          <div className="comprehensiveProject">
+          <div
+            className="comprehensiveProject"
+            onClick={() =>
+              navigate("/projectPage", {
+                state: {
+                  category: "comprehensive",
+                },
+              })
+            }
+          >
             <div className="projectCircle large">
               <img src={compProject} alt="Project" className="circleImage" />
             </div>
@@ -121,8 +128,22 @@ export default function Home() {
               </p>
             </div>
           </div>
+          </div>
+
+          
 
           <div className="smallProject">
+            <div className="projectContainer">
+          <div
+            className="comprehensiveProject"
+            onClick={() =>
+              navigate("/projectPage", {
+                state: {
+                  category: "small",
+                },
+              })
+            }
+          >
             <div className="projectCircle medium">
               <img src={smallProject} alt="Project" className="circleImage" />
             </div>
@@ -130,9 +151,22 @@ export default function Home() {
               <h3>Small Projects</h3>
               <p>Quick experiments and fun ideas.</p>
             </div>
+            </div>
+          </div>
           </div>
 
           <div className="archiveProject">
+            <div className="projectContainer">
+          <div
+            className="comprehensiveProject"
+            onClick={() =>
+              navigate("/projectPage", {
+                state: {
+                  category: "archive",
+                },
+              })
+            }
+          >
             <div className="projectCircle small">
               <img src={archiveProject} alt="Project" className="circleImage" />
             </div>
@@ -141,7 +175,9 @@ export default function Home() {
               <p>Previous work and old experiments.</p>
             </div>
           </div>
+          </div>
         </div>
+      </div>
       </section>
 
       <footer className="footer" id="contact">

@@ -98,50 +98,6 @@ p {
 }
 
 /* =============================
-   NAVBAR
-============================= */
-
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 1.25rem 6rem;
-
-  backdrop-filter: blur(12px);
-  background: rgba(15, 15, 15, .85);
-
-  border-bottom: 1px solid rgba(255,255,255,.05);
-}
-
-.logo {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-.navLinks {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.navLinks a {
-  color: var(--text);
-  text-decoration: none;
-  font-size: .85rem;
-  transition: .3s;
-}
-
-.navLinks a:hover {
-  color: var(--accent);
-}
-
-/* =============================
    HERO
 ============================= */
 
@@ -264,7 +220,6 @@ p {
 .techPill {
   background: #171717;
   border: 1px solid var(--border);
-
   padding: .55rem .9rem;
   border-radius: 12px;
 
@@ -284,6 +239,16 @@ p {
 
 .projectsSection {
   padding: 4rem 8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectTypeList{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: clamp(2rem, 5vw, 6rem);
+  margin-bottom: 4rem;
 }
 
 .projectsSection h2 {
@@ -295,11 +260,9 @@ p {
 .projectContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   text-align: center;
-
   gap: clamp(2rem, 5vw, 6rem);
-
   flex-wrap: wrap;
 }
 
@@ -532,6 +495,20 @@ p {
 
   .navLinks {
     gap: 1rem;
+  }
+
+  .inProgressIndicator {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem 1.5rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .inProgressText {
+    align-items: center;
   }
 
   .hero {
