@@ -23,18 +23,20 @@ export default function Home() {
   const navigate = useNavigate();
 
   const techStack = [
-    "Java",
-    "Spring Boot",
-    "React",
+    "React.js",
+    "Express.js",
+    "Javascript(Node.js)",
+    "Python(PHP)",
     "PostgreSQL",
-    "Docker",
-    "AWS",
-    "Git",
-    "Linux",
     "MongoDB",
-    "Redis",
-    "TypeScript",
-    "Jenkins",
+    "AWS",
+    "Git/Github",
+    "Angular",
+    "UI/UX Design",
+    "Figma",
+    "HTML/CSS",
+    "REST APIs",
+    "Copilot",
   ];
 
   return (
@@ -87,8 +89,7 @@ export default function Home() {
           <h1>About Me</h1>
 
           <p>
-            Hi, I'm Prasad. Curious by nature. Placeholder text for now. Add
-            your actual developer story later.
+            Full-stack developer, professional problem solver, and part-time collector of random knowledge. I build software, ask too many questions, and have an incurable habit of learning things that may or may not be useful. From new technologies to obscure facts, if it exists, I probably want to know how it works. Also, I firmly believe every project gets better with cat stickers.
           </p>
 
           <h3>Skills & Tech Stack</h3>
@@ -184,9 +185,16 @@ export default function Home() {
         <div>Let's connect.</div>
 
         <div className="socials">
-          <a href="#">LinkedIn</a>
-          <a href="#">X</a>
-          <a href="#">Instagram</a>
+          <a href="https://www.linkedin.com/in/prasad-kshirsagar-26ab78139" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+          <a href="mailto:kshirsagarprasad907@gmail.com>" target="_blank" rel="noopener noreferrer">
+            Email
+          </a>
+          <a href="https://www.instagram.com/pro_sad.907?hvrq=emI5YXd5Z3UwZThv" target="_blank" rel="noopener noreferrer">
+            Instagram
+          </a>
+          <a href="tel:+918668266898">Mobile</a>
         </div>
       </footer>
     </div>

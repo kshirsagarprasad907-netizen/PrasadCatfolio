@@ -1,9 +1,18 @@
 import "../styles/navbar.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+
+    const navigate = useNavigate()
+
   return (
     <nav className="navbar">
-        <div className="logo">🐾 CatFolio</div>
+        <div
+        className="logo"
+        onClick={() => navigate("/home")}
+        style={{ cursor: "pointer" }}>
+        🐾 CatFolio
+        </div>
 
         <div className="navLinks">
           <a href="#projects">Projects</a>
